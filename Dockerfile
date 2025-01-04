@@ -64,9 +64,9 @@ RUN chmod +x bin/* && \
     sed -i 's/ruby\.exe$/ruby/' bin/*
 
 # Precompiling assets for production without requiring secret RAILS_MASTER_KEY
-ENV SECRET_KEY_BASE=dumb
-RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
-
+ARG SECRET_KEY_BASE
+ENV SECRET_KEY_BASE=${SECRET_KEY_BASE}
+RUN ./bin/rails assets:precompile
 
 RUN rm -rf node_modules
 
