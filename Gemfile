@@ -66,4 +66,4 @@ end
 
 gem "webpacker", "~> 5.4"
 
-gem 'cssbundling-rails', '~> 1.3', '>= 1.3.3'
+
